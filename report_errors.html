@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Report Errors</title>
+  <style>
+    /* Styles for the form */
+    form {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    input[type="submit"] {
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* Styles for the page */
+    body {
+      background-color: #f1f1f1;
+    }
+
+    h3 {
+      text-align: center;
+      margin-top: 50px;
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <h3>Report Errors</h3>
+  <form action="submit-errors.php" method="post">
+    <div>
+      <label for="invoice-number">Invoice Number:</label>
+      <input type="text" id="invoice-number" name="invoice-number" required>
+    </div>
+    <div>
+      <label for="error-type">Type of Error:</label>
+      <select id="error-type" name="error-type" required>
+        <option value="">Select error type</option>
+        <option value="missing-item">Missing Item</option>
+        <option value="wrong-item">Wrong Item</option>
+        <option value="delayed-delivery">Delayed Delivery</option>
+        <option value="damaged-item">Damaged Item</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="error-details">Error Details:</label>
+      <textarea id="error-details" name="error-details" required></textarea>
+    </div>
+    <div>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</body>
+</html>
